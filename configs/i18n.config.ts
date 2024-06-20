@@ -1,7 +1,14 @@
 import { notFound } from "next/navigation";
 import { getRequestConfig } from "next-intl/server";
 
-const locales = ["en", "th"];
+export const locales = ["en", "th"] as const;
+
+export type ILocale = typeof locales[number];
+
+export const localeLabels: Record<ILocale, string> = {
+  en: "English",
+  th: "ไทย",
+};
 
 export default getRequestConfig(async ({ locale }) => {
   // Validate that the incoming `locale` parameter is valid
