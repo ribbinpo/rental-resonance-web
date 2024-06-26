@@ -4,8 +4,8 @@ import { SwitchLanguage } from "../switchLanguage";
 
 export default function Navbar() {
   return (
-    <nav className="border p-5 flex justify-between">
-      <h1>Rental Resonance</h1>
+    <nav className="border py-2 px-6 flex justify-between items-center">
+      <h1 className="font-semibold">Rental Resonance</h1>
       <SwitchLanguage />
     </nav>
   );
