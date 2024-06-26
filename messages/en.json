@@ -1,5 +1,30 @@
 {
   "Index": {
     "title": "Hello world!"
+  },
+  "RentCalculator": {
+    "title": "Rent House Calculator",
+    "description": "This form is used to simulate the rent calculation of the house.",
+    "table": {
+      "header": {
+        "unit": "unit",
+        "detail": "detail",
+        "perUnit": "per unit",
+        "total": "total"
+      },
+      "body": {
+        "rent": "rent",
+        "ebill": "electricity bill",
+        "wbill": "water bill",
+        "unit": "unit",
+        "pricePerUnit": "price per unit",
+        "fixedCost": "fixed cost",
+        "perUnit": "per unit",
+        "total": "Total"
+      }
+    }
+  },
+  "Currency": {
+    "baht": "Baht"
   }
 }
