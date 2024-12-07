@@ -1,8 +1,10 @@
 "use client";
 import { useLocale } from "next-intl";
 
-import { useRouter, usePathname } from "@/configs/navigation";
-import { locales, localeLabels, ILocale } from "@/configs/i18n.config";
+import { ILOCALES, usePathname, useRouter, LOCALES } from "@/i18n/routing";
+
+// import { useRouter, usePathname } from "@/i18n/navigation";
+// import { locales, localeLabels, ILocale } from "@/i18n/i18n.config";
 
 import {
   Select,
@@ -17,19 +19,19 @@ export const SwitchLanguage = () => {
   const router = useRouter();
   const pathname = usePathname();
 
-  const onSwitchLocaleChange = (locale: ILocale) => {
+  const onSwitchLocaleChange = (locale: ILOCALES) => {
     router.replace(pathname, { locale });
   };
   return (
     <Select onValueChange={onSwitchLocaleChange} defaultValue={locale}>
       <SelectTrigger className="w-fit">
-        <SelectValue placeholder={localeLabels[locale as ILocale]} />
+        <SelectValue placeholder={locale} />
       </SelectTrigger>
       <SelectContent>
-        {locales.map((_locale) => {
+        {LOCALES.map((_locale) => {
           return (
             <SelectItem value={_locale} key={_locale}>
-              {localeLabels[_locale]}
+              {_locale}
             </SelectItem>
           );
         })}
