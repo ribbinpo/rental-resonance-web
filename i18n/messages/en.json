@@ -26,5 +26,16 @@
   },
   "Currency": {
     "baht": "Baht"
+  },
+  "Auth": {
+    "login": {
+      "title": "Login",
+      "description": "Please enter your email and password",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Login",
+      "noAccount": "Don't have an account?",
+      "register": "Register"
+    }
   }
 }

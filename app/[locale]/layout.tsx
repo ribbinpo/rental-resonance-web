@@ -1,6 +1,8 @@
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { ILOCALES, routing } from "@/i18n/routing";
 
@@ -12,11 +14,12 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default async function LocaleLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: ILOCALES };
+  params: Promise<{ locale: ILOCALES }>;
 }) {
+  const { locale } = await params;
 
   if (!routing.locales.includes(locale)) notFound();
 
@@ -28,6 +31,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           {children}
+          <ToastContainer />
         </NextIntlClientProvider>
       </body>
     </html>
