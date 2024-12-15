@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 
 import {
   Card,
@@ -26,9 +27,9 @@ export default function LoginPage() {
         <CardFooter className="flex flex-col gap-4">
           <p className="text-sm text-center text-muted-foreground">
             {t("login.noAccount")}{" "}
-            <a href="/auth/register" className="text-primary hover:underline">
+            <Link href="/auth/register" className="text-primary hover:underline">
               {t("login.register")}
-            </a>
+            </Link>
           </p>
         </CardFooter>
       </Card>
