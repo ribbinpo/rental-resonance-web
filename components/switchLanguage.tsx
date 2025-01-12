@@ -24,7 +24,7 @@ export const SwitchLanguage = () => {
   };
   return (
     <Select onValueChange={onSwitchLocaleChange} defaultValue={locale}>
-      <SelectTrigger className="w-fit">
+      <SelectTrigger className="w-fit rounded-xl">
         <SelectValue placeholder={locale} />
       </SelectTrigger>
       <SelectContent>

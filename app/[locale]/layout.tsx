@@ -6,8 +6,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { ILOCALES, routing } from "@/i18n/routing";
 
-import Navbar from "@/components/layouts/navbar";
-
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -29,7 +27,6 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body className={inter.className} suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
-          <Navbar />
           {children}
           <ToastContainer />
         </NextIntlClientProvider>
